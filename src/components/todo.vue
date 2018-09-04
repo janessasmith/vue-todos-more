@@ -12,7 +12,7 @@
         <!-- 标题 -->
         <span class="title-wrapper">{{todo.title}}</span>
         <!-- 数量 -->
-        <span class="count-list">{{todo.count}}</span>
+        <span class="count-list">{{todo.count || 0}}</span>
       </h1>
       <!-- 右侧删除，锁定图标容器 -->
       <div class="nav-group right">
@@ -57,22 +57,23 @@ import item from './item.vue'
           count: 12,
           locked: false
         },
-        items: [{
-            checked: false,
-            text: '新的一天',
-            isDelete: false
-          },
-          {
-            checked: false,
-            text: '新的一天',
-            isDelete: false
-          },
-          {
-            checked: false,
-            text: '新的一天',
-            isDelete: false
-          }
-        ],
+        // items: [{
+        //     checked: false,
+        //     text: '新的一天',
+        //     isDelete: false
+        //   },
+        //   {
+        //     checked: false,
+        //     text: '新的一天',
+        //     isDelete: false
+        //   },
+        //   {
+        //     checked: false,
+        //     text: '新的一天',
+        //     isDelete: false
+        //   }
+        // ],
+        items: [],
         text: ''
       }
     },
