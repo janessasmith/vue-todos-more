@@ -1,3 +1,4 @@
+![](./src/assets/screenshot/layouts.jpeg)
 # vue-todos-more
 
 > A Vue.js project
