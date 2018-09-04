@@ -31,15 +31,25 @@
       <!-- 新增单个代办单项输入框,监听了回车事件，双向绑定text值,监听了disabled属性，在todo.locked为true的情况下无法编辑 -->
       <div class="form todo-new input-symbol">
         <input type="text" v-model="text" placeholder="请输入" @keyup.enter="onAdd" :disabled="todo.locked">
-        <span class="icon-add"></span>
+        <span class="icon-add" @click="onAdd"></span>
       </div>
     </nav>
     <!-- 容器下半部分 -->
-    <div class="content-scrollable list-items"></div>
+    <div class="content-scrollable list-items">
+      <!-- 这里v-for会循环我们在data函数事先定义好的items模拟数据，循环后拿到单个对象，在通过prop把数据传输给子组件item -->
+      <div v-for="item in items">
+        <item :item="item"></item>
+      </div>
+    </div>
   </div>
 </template>
 <script>
+// 导入item组件
+import item from './item.vue'
   export default {
+    components: {
+      item
+    },
     data() {
       return {
         todo: {
